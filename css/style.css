@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'MyGameFont';
-  src: url('./fonts/CeraPro-Medium.ttf') format('truetype');
+  src: url('../fonts/CeraPro-Medium.ttf') format('truetype');
 }
 
 * {
