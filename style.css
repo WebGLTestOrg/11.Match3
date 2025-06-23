@@ -15,12 +15,12 @@
 :root {
   --columns: 6;
   --rows: 5;
-  --tile-gap: 1.5vmin;
+  --tile-gap: 3vmin;
 
-  /* адаптивная ширина и высота */
-  --grid-width: min(90vmin, 600px);
+  --grid-width: min(100vmin, 1000px);
   --tile-size: calc((var(--grid-width) - (var(--tile-gap) * (var(--columns) - 1))) / var(--columns));
   --grid-height: calc(var(--tile-size) * var(--rows) + var(--tile-gap) * (var(--rows) - 1));
+  --header-height: 10vmin;
 }
 
 html,
@@ -46,17 +46,19 @@ body {
 
 .game-container {
   width: var(--grid-width);
-  height: var(--grid-height);
-  position: relative;
+  height: 100vh;
+  padding-top: var(--header-height);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: #E80024;
-  border-radius: 2vmin;
+  position: relative;
 }
 
 .wrap {
-  position: absolute;
-  inset: 0;
   width: var(--grid-width);
   height: var(--grid-height);
+  position: relative;
   z-index: 1;
 }
 
@@ -111,11 +113,12 @@ body {
 /* Верхняя панель */
 .header-bar {
   position: absolute;
-  top: -12vmin;
+  top: 0;
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
   max-width: var(--grid-width);
+  height: var(--header-height, 12vmin); /* можно контролировать переменной */
   padding: 2vmin 4vmin;
   background-color: transparent;
   border: 0.4vmin solid #1a1a1a;
