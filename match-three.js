@@ -73,7 +73,7 @@ export class MatchThree {
 
       if (timeLeft <= 0) {
         clearInterval(this.timerInterval);
-        //this.isGameActive = false;
+        this.isGameActive = false;
         console.log({
           type: "lose",
           points: this.game.totalRemovedTargetTile * 10,

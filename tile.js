@@ -34,12 +34,10 @@ export class Tile {
   }
 
   handleTouchStart = (e) => {
-    e.preventDefault(); // предотвращаем скролл
     this.handleTileClick(this.row, this.column, "down");
   };
 
   handleTouchMove = (e) => {
-    e.preventDefault();
     // Получаем координаты касания
     const touch = e.touches[0];
     const targetElement = document.elementFromPoint(touch.clientX, touch.clientY);
@@ -55,7 +53,6 @@ export class Tile {
   };
 
   handleTouchEnd = (e) => {
-    e.preventDefault();
     this.handleTileClick(this.row, this.column, "up");
   };
 
