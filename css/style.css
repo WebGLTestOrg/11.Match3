@@ -108,7 +108,7 @@ body {
 
 /* Верхняя панель */
 .header-bar {
-  position: absolute;
+  position: fixed;
   top: env(safe-area-inset-top);
   left: 50%;
   transform: translateX(-50%);
