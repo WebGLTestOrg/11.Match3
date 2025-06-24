@@ -38,7 +38,7 @@ export class MatchThree {
     if (swapStates) {
       console.log("Combination formed! Current progress:", this.game.targetTilePairsCount);
       // ✅ Увеличиваем progress по количеству пар tile6
-      this.progressCount = this.game.targetTilePairsCount;
+      this.progressCount = this.game.totalRemovedTargetTile;
       if (this.progressCount <= this.maxPairs) {
         this.progressCountElement.textContent = this.progressCount;
       }

@@ -8,7 +8,7 @@ function startGame() {
   const rows = isMobile ? 6 : 5;
   const columns = isMobile ? 5 : 6;
 
-  matchThreeInstance = new MatchThree(rows,columns , 4);
+  matchThreeInstance = new MatchThree(rows,columns , 5);
 }
 
 
