@@ -30,6 +30,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-top: env(safe-area-inset-top);
 }
 
 .score {
@@ -69,17 +70,12 @@ body {
   position: absolute;
   width: var(--tile-size);
   height: var(--tile-size);
-
   top: calc(var(--row) * (var(--tile-size) + var(--tile-gap)));
   left: calc(var(--column) * (var(--tile-size) + var(--tile-gap)));
-
-
   border-radius: 1.5vmin;
-
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-
   transition: top 140ms, left 140ms;
   animation: show 50ms;
   cursor: pointer;
@@ -113,13 +109,13 @@ body {
 /* Верхняя панель */
 .header-bar {
   position: absolute;
-  top: 0;
+  top: env(safe-area-inset-top);
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
   max-width: var(--grid-width);
-  height: var(--header-height, 12vmin); /* можно контролировать переменной */
-  padding: 2vmin 4vmin;
+  height: var(--header-height, 12vmin);
+  padding: calc(2vmin + env(safe-area-inset-top)) 4vmin 2vmin 4vmin;
   background-color: transparent;
   border: 0.4vmin solid #1a1a1a;
   border-radius: 2vmin;
@@ -203,7 +199,7 @@ body {
 /* Медиазапрос для маленьких экранов */
 @media (max-width: 480px) {
   .header-bar {
-    padding: 1vmin 2vmin;
+    padding: calc(1vmin + env(safe-area-inset-top)) 2vmin 1vmin 2vmin;
     gap: 1vmin;
   }
 
