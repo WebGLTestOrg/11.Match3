@@ -27,8 +27,27 @@ export class Game {
   }
 
   getRandomValue() {
-    return Math.floor(Math.random() * this.elementsCount) + 1;
+  const rand = Math.random();
+  const dropTargetChance = 0.05; // 5% штраф
+
+  // Общее количество типов (например: 1, 2, 3, 4)
+  const possibleValues = [];
+
+  for (let i = 1; i <= this.elementsCount; i++) {
+    if (i === this.targetTile) {
+      // Добавляем, только если rand > dropTargetChance
+      if (rand > dropTargetChance) {
+        possibleValues.push(i);
+      }
+    } else {
+      possibleValues.push(i);
+    }
   }
+
+  const index = Math.floor(Math.random() * possibleValues.length);
+  return possibleValues[index];
+}
+
 
   isRow(row, column) {
     return this.isVerticalRow(row, column) || this.isHorizontalRow(row, column);
